@@ -1,0 +1,6 @@
+filegroup(
+    name = "sqls",
+    testonly = 1,
+    srcs = glob(["sqls/*.sql"]),
+    visibility = ["//visibility:public"],
+)

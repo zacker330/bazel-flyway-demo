@@ -1,0 +1,19 @@
+load("@rules_java//java:defs.bzl", "java_test")
+
+java_test(
+    name = "flywayRun",
+    #    size = "small",
+    srcs = glob(["codes/showme/flyway/*Test.java"]),
+    resources = ["//:sqls"],
+    test_class = "codes.showme.flyway.MainTest",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@maven//:junit_junit",
+        "@maven//:org_flywaydb_flyway_core",
+        "@maven//:org_hamcrest_hamcrest_library",
+        "@maven//:org_postgresql_postgresql",
+        "@maven//:org_slf4j_slf4j_api",
+        "@maven//:org_testcontainers_postgresql",
+        "@maven//:org_testcontainers_testcontainers",
+    ],
+)
