@@ -22,7 +22,7 @@ public class MainTest {
                 .dataSource(postgreSQLContainer.getJdbcUrl(),
                 postgreSQLContainer.getUsername(), postgreSQLContainer.getPassword()).load();
         MigrateResult migrate = flyway.migrate();
-        Assert.assertEquals(1, migrate.migrationsExecuted);
+        Assert.assertEquals(2, migrate.migrationsExecuted);
         Assert.assertTrue(migrate.success);
     }
 
